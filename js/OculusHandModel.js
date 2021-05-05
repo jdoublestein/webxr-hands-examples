@@ -47,7 +47,6 @@ class XRHandOculusMeshModel {
 
       const mesh = object.getObjectByProperty("type", "SkinnedMesh");
       mesh.frustumCulled = false;
-      mesh.wireframe = true;
       // mesh.castShadow = true;
       // mesh.receiveShadow = true;
 
@@ -119,12 +118,9 @@ class XRHandOculusMeshModel {
           const position = XRJoint.position;
 
           if (bone) {
-			  if (i == 5 )
-			  {
-					bone.position.copy(position.clone().multiplyScalar(100));
-			  }
-			  bone.quaternion.copy(XRJoint.quaternion);
-              //bone.scale.setScalar( XRJoint.jointRadius || defaultRadius );
+            bone.position.copy(position.clone().multiplyScalar(100));
+            bone.quaternion.copy(XRJoint.quaternion);
+            // bone.scale.setScalar( XRJoint.jointRadius || defaultRadius );
           }
         }
       }
