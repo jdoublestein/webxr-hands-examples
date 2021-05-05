@@ -118,8 +118,8 @@ class XRHandOculusMeshModel {
           const position = XRJoint.position;
 
           if (bone) {
-            if (i == 6 || i == 7 || i == 8) {
-              if (i == 6 ) {
+            if (i == 5 || i == 6 || i == 7 || i == 8) {
+              if (i !== 5 ) {
                 const parentBone = this.bones[i-1];
                 const XRParentJoint = XRJoints[parentBone.jointName];
                 bone.quaternion.copy(XRJoint.quaternion.multiply(XRParentJoint.quaternion.invert()));
