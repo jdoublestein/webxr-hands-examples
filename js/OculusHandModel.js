@@ -118,7 +118,9 @@ class XRHandOculusMeshModel {
           const position = XRJoint.position;
 
           if (bone) {
-            //bone.position.copy(position.clone().multiplyScalar(100));
+            if(i !== 5) {
+              bone.position.copy(position.clone().multiplyScalar(100));
+            };
             bone.quaternion.copy(XRJoint.quaternion);
             // bone.scale.setScalar( XRJoint.jointRadius || defaultRadius );
           }
