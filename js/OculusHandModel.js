@@ -118,9 +118,18 @@ class XRHandOculusMeshModel {
           const position = XRJoint.position;
 
           if (bone) {
-            bone.position.copy(position.clone().multiplyScalar(100));
-            bone.quaternion.copy(XRJoint.quaternion);
-            // bone.scale.setScalar( XRJoint.jointRadius || defaultRadius );
+            if (i == 6 || i == 7 || i == 8) {
+              if (i == 6 ) {
+                const parentBone = this.bone[i-1];
+                const XRParentJoint = XRJoints[parentBone.jointName];
+                bone.quaternion.copy(XRJoint.quaternion.multiply(XRParentJoint.quaternion.invert()));
+              }
+            }
+			else {
+              bone.position.copy(position.clone().multiplyScalar(100));
+              bone.quaternion.copy(XRJoint.quaternion);
+              // bone.scale.setScalar( XRJoint.jointRadius || defaultRadius );
+			}
           }
         }
       }
