@@ -47,6 +47,7 @@ class XRHandOculusMeshModel {
 
       const mesh = object.getObjectByProperty("type", "SkinnedMesh");
       mesh.frustumCulled = false;
+      mesh.wireframe = true;
       // mesh.castShadow = true;
       // mesh.receiveShadow = true;
 
