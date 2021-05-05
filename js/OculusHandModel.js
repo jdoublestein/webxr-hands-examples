@@ -119,7 +119,7 @@ class XRHandOculusMeshModel {
           const position = XRJoint.position;
 
           if (bone) {
-			  if (i !== 5 )
+			  if (i == 5 )
 			  {
 					bone.position.copy(position.clone().multiplyScalar(100));
 			  }
