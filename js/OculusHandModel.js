@@ -43,7 +43,7 @@ class XRHandOculusMeshModel {
     loader.load(handedness + "_new.fbx", (object) => {
       this.handModel.add(object);
       // Hack because of the scale of the skinnedmesh
-      object.scale.setScalar(0.01);
+      //object.scale.setScalar(0.01);
 
       const mesh = object.getObjectByProperty("type", "SkinnedMesh");
       mesh.frustumCulled = false;
@@ -131,7 +131,8 @@ class XRHandOculusMeshModel {
           }
           else {
 		  	*/
-            bone.position.copy(position.clone().multiplyScalar(110));
+            //bone.position.copy(position.clone().multiplyScalar(110));
+			bone.position.copy(position.clone());
             bone.quaternion.copy(XRJoint.quaternion);
             //bone.scale.setScalar( XRJoint.jointRadius || defaultRadius );
 		    //}
